@@ -50,7 +50,7 @@ body {
         opacity: 1;
     }
 }
-.element {
+.element-container .element {
     user-select: none;
     display: block;
     transition: 0.3s;
@@ -59,7 +59,7 @@ body {
     flex-direction: column;
     cursor: pointer;
 }
-.element .line {
+.element-container .element .line {
     user-select: none;
     display: flex;
     flex-direction: row;
@@ -69,12 +69,12 @@ body {
     padding-bottom: 15rem;
     color: #0059d9;
 }
-.element .line .icons {
+.element-container .element .line .icons {
     opacity: 0;
     visibility: hidden;
     transition: 0.3s;
 }
-.element .line .icons .icon-sign {
+.element-container .element .line .icons .icon-sign {
     transition: 0.3s;
     display: block;
     width: 25rem;
@@ -86,7 +86,7 @@ body {
     -webkit-mask: url(./images/plus-solid.svg) no-repeat center;
     mask: url(./images/plus-solid.svg) no-repeat center;
 }
-.element .line .icons .icon-sign_cross {
+.element-container .element .line .icons .icon-sign_cross {
     display: none;
     visibility: hidden;
     opacity: 0;
@@ -96,7 +96,7 @@ body {
     -webkit-mask: url(./images/xmark-solid.svg) no-repeat center;
     mask: url(./images/xmark-solid.svg) no-repeat center;
 }
-.element .image-container {
+.element-container .element .image-container {
     display: grid;
     transition: 0.6s ease-out;
     grid-auto-flow: row;
@@ -107,7 +107,7 @@ body {
     justify-content: center;
     align-content: center;
 }
-.element .image-container .image {
+.element-container .element .image-container .image {
     object-fit: contain;
     display: block;
     width: 100%;
@@ -115,47 +115,55 @@ body {
     max-width: 520rem;
     max-height: 520rem;
 }
-.element .mems-input {
+.element-container .element .mems-input {
     display: none;
 }
-.element:has(.mems-input:checked) {
+.element-container .element:has(.mems-input:checked) {
     color: black;
 }
-.element:has(.mems-input:checked) .line .icons .icon-sign {
+.element-container .element:has(.mems-input:checked) .line .icons .icon-sign {
     transform: rotate(45deg);
 }
-.element:has(.mems-input:checked) .image-container {
+.element-container .element:has(.mems-input:checked) .image-container {
     grid-template-columns: 1fr;
     padding-bottom: 15rem;
 }
 @media (hover: hover) {
-    .element:hover {
+    .element-container .element:hover {
         color: black;
     }
-    .element:hover .line .icons .icon-sign {
+    .element-container .element:hover .line .icons .icon-sign {
         transform: rotate(45deg);
     }
-    .element:hover .image-container {
+    .element-container .element:hover .image-container {
         grid-template-columns: 1fr;
         padding-bottom: 15rem;
     }
 }
-.element:has(.mems-input:checked) .line {
+.element-container .element:has(.mems-input:checked) .line {
     color: black;
 }
-.element:active,
-.element:has(.mems-input:checked):active {
+.element-container .element:active,
+.element-container .element:has(.mems-input:checked):active {
     opacity: 0.7;
 }
-.element:active .line,
-.element:has(.mems-input:checked):active .line {
+.element-container .element:active .line,
+.element-container .element:has(.mems-input:checked):active .line {
     color: #0059d9;
 }
-.element:active .line .icons .icon-sign,
-.element:has(.mems-input:checked):active .line .icons .icon-sign {
+.element-container .element:active .line .icons .icon-sign,
+.element-container
+    .element:has(.mems-input:checked):active
+    .line
+    .icons
+    .icon-sign {
     background-color: #0059d9;
 }
-.element:active .line .icons .icon-sign_cross,
-.element:has(.mems-input:checked):active .line .icons .icon-sign_cross {
+.element-container .element:active .line .icons .icon-sign_cross,
+.element-container
+    .element:has(.mems-input:checked):active
+    .line
+    .icons
+    .icon-sign_cross {
     background-color: #0059d9;
 }
