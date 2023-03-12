@@ -37,14 +37,20 @@ body {
     padding-bottom: 18rem;
 }
 
-.element-container:hover .element .line {
-    color: black;
-}
-.element-container:hover .element .line .icons {
-    visibility: visible;
-    opacity: 1;
+@media (hover: hover) {
+    .element-container:hover .element {
+        user-select: none;
+    }
+    .element-container:hover .element .line {
+        color: black;
+    }
+    .element-container:hover .element .line .icons {
+        visibility: visible;
+        opacity: 1;
+    }
 }
 .element-container .element {
+    user-select: none;
     display: block;
     transition: 0.3s;
     border-top: 2rem solid #d4dbe3;
@@ -53,8 +59,6 @@ body {
     cursor: pointer;
 }
 .element-container .element .line {
-    -webkit-user-select: none;
-    -moz-user-select: none;
     user-select: none;
     display: flex;
     flex-direction: row;
@@ -69,7 +73,7 @@ body {
     visibility: hidden;
     transition: 0.3s;
 }
-.element-container .element .line .icons .icon-sign:not(:hover) {
+.element-container .element .line .icons .icon-sign {
     transition: 0.3s;
     display: block;
     width: 25rem;
@@ -103,7 +107,6 @@ body {
     align-content: center;
 }
 .element-container .element .image-container .image {
-    -o-object-fit: contain;
     object-fit: contain;
     display: block;
     width: 100%;
@@ -114,18 +117,27 @@ body {
 .element-container .element .mems-input {
     display: none;
 }
-.element-container .element:has(.mems-input:checked),
-.element-container .element:hover {
+.element-container .element:has(.mems-input:checked) {
     color: black;
 }
-.element-container .element:has(.mems-input:checked) .line .icons .icon-sign,
-.element-container .element:hover .line .icons .icon-sign {
+.element-container .element:has(.mems-input:checked) .line .icons .icon-sign {
     transform: rotate(45deg);
 }
-.element-container .element:has(.mems-input:checked) .image-container,
-.element-container .element:hover .image-container {
+.element-container .element:has(.mems-input:checked) .image-container {
     grid-template-columns: 1fr;
     padding-bottom: 15rem;
+}
+@media (hover: hover) {
+    .element-container .element:hover {
+        color: black;
+    }
+    .element-container .element:hover .line .icons .icon-sign {
+        transform: rotate(45deg);
+    }
+    .element-container .element:hover .image-container {
+        grid-template-columns: 1fr;
+        padding-bottom: 15rem;
+    }
 }
 .element-container .element:has(.mems-input:checked) .line {
     color: black;
